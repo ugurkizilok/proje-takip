@@ -1,5 +1,7 @@
+// Fixed version of ProjectTrackingApp.js
+
 import { useState, useEffect } from "react";
-import { Card, CardContent } from "./components/ui/card";
+import { Card } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
@@ -65,10 +67,9 @@ export default function ProjectTrackingApp() {
 
   const handleAddProject = () => {
     setProjects([...projects, { ...form, status: "Beklemede" }]);
-    setForm({ eyalet: "", sehir: "", poligon: "", pdp: "", standortsicherung: "Beklemede", standortsicherungHedef: "", standortsicherungGonderildi: "", standortsicherungOnayBeklemeSuresi: "", standortsicherungOnayTarihi: "", standortsicherungGecerlilik: "", tkg: "Onay Bekliyor", tkgHedef: "", tkgGonderildi: "", tkgOnayBeklemeSuresi: "", tkgOnayTarihi: "", tkgGecerlilik: "", tkgRedNeden: "", vrao: "Onay Bekliyor", vraoHedef: "", vraoGonderildi: "", vraoOnayBeklemeSuresi: "", vraoOnayTarihi: "", vraoGecerlilik: "" });
   };
 
-  const data = projects.map((p, index) => ({ name: p.pdp, Fortschritt: Math.random() * 100 }));
+  const data = projects.map((p) => ({ name: p.pdp, Fortschritt: Math.random() * 100 }));
 
   return (
     <div className="p-4">
